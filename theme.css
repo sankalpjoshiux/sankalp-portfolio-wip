@@ -13,7 +13,7 @@ body,
 .section-heading h2 em,
 .about-copy em,
 .principle h3 em,
-.contact h2 em { font-family: 'Instrument Serif', Georgia, serif !important; font-weight: 400 !important; }
+.contact h2 em { font-family: Georgia, 'Times New Roman', 'Instrument Serif', serif !important; font-weight: 400 !important; }
 
 .brand,
 .hero-top,
@@ -45,7 +45,7 @@ body,
 .project-info .coming-soon { margin-left: auto; font: 500 9px 'Geist Mono', monospace; letter-spacing: .55px; text-transform: uppercase; color: #66716a; border: 1px solid #c9ccc5; border-radius: 100px; padding: 6px 9px; white-space: nowrap; }
 .project:hover .project-info > b { transform: none; }
 
-.agent-prompt em { font-family: 'Instrument Serif', Georgia, serif; }
+.agent-prompt em { font-family: Georgia, 'Times New Roman', 'Instrument Serif', serif; }
 
 /* The light AI signal card needs its own foreground in dark mode. */
 .card-two { color: #17191a; }
