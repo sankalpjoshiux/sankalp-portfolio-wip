@@ -13,7 +13,7 @@ body,
 .section-heading h2 em,
 .about-copy em,
 .principle h3 em,
-.contact h2 em { font-family: 'Geist', sans-serif !important; font-weight: 400 !important; }
+.contact h2 em { font-family: 'Instrument Serif', Georgia, serif !important; font-weight: 400 !important; }
 
 .brand,
 .hero-top,
@@ -45,7 +45,7 @@ body,
 .project-info .coming-soon { margin-left: auto; font: 500 9px 'Geist Mono', monospace; letter-spacing: .55px; text-transform: uppercase; color: #66716a; border: 1px solid #c9ccc5; border-radius: 100px; padding: 6px 9px; white-space: nowrap; }
 .project:hover .project-info > b { transform: none; }
 
-.agent-prompt em { font-family: 'Geist', sans-serif; }
+.agent-prompt em { font-family: 'Instrument Serif', Georgia, serif; }
 
 /* The light AI signal card needs its own foreground in dark mode. */
 .card-two { color: #17191a; }
@@ -134,6 +134,51 @@ body,
   .agent-window { transform: scale(.78); transform-origin: top left; }
   .card-one { transform: scale(.74) rotate(8deg); transform-origin: top right; }
   .card-two { transform: scale(.75) rotate(-6deg); transform-origin: bottom left; }
+}
+
+/* Phone and tablet: stack hero visual and project metadata deliberately. */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 42px;
+    justify-content: flex-start;
+  }
+  .hero-copy { margin: 64px 0 0; }
+  .hero-art {
+    position: relative;
+    display: block !important;
+    inset: auto;
+    align-self: flex-end;
+    width: min(430px, 88vw);
+    height: 365px;
+    margin: 34px 0 28px;
+    transform: none;
+  }
+  .scroll-prompt { margin-top: 8px; }
+  .project-info {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 8px 12px;
+  }
+  .project-info > span { grid-column: 1; grid-row: 1; }
+  .project-info .coming-soon {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    align-self: start;
+  }
+  .project-info > div { grid-column: 1 / -1; grid-row: 2; }
+  .about-bottom { display: block; }
+  .about-bottom .line-link { display: inline-block; margin-top: 28px; }
+}
+
+@media (max-width: 760px) {
+  .hero-art {
+    width: min(330px, 90vw);
+    height: 280px;
+    margin-top: 28px;
+  }
+  .agent-window { transform: scale(.76); transform-origin: top left; }
 }
 @media (min-width: 761px) and (max-width: 1700px) {
   .hero { min-height: 1080px; justify-content: flex-start; }
