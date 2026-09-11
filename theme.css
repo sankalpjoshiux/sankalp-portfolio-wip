@@ -180,6 +180,36 @@ body,
   }
   .agent-window { transform: scale(.76); transform-origin: top left; }
 }
+
+/* Safari has different viewport scaling for the capped desktop canvas.
+   Keep the Copilot composition in normal flow so it never overlaps copy. */
+@supports (-webkit-appearance: none) {
+  .hero {
+    min-height: auto !important;
+    justify-content: flex-start;
+    padding-bottom: 44px;
+  }
+  .hero-copy { margin: 9vh 0 0; }
+  .hero-art {
+    position: relative !important;
+    display: block !important;
+    inset: auto !important;
+    align-self: flex-end;
+    width: min(520px, 90vw);
+    height: 440px;
+    margin: 42px 0 28px;
+    transform: none !important;
+  }
+  .scroll-prompt { margin-top: 12px; }
+}
+
+@supports (-webkit-appearance: none) and (max-width: 760px) {
+  .hero-art {
+    width: min(330px, 90vw);
+    height: 280px;
+    margin-top: 28px;
+  }
+}
 @media (min-width: 761px) and (max-width: 1700px) {
   .hero { min-height: 1080px; justify-content: flex-start; }
   .hero-copy { margin: 9vh 0 0; }
