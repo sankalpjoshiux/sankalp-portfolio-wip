@@ -13,7 +13,7 @@ body,
 .section-heading h2 em,
 .about-copy em,
 .principle h3 em,
-.contact h2 em { font-family: 'Instrument Serif', Georgia, serif !important; font-weight: 400 !important; }
+.contact h2 em { font-family: 'Geist', sans-serif !important; font-weight: 400 !important; }
 
 .brand,
 .hero-top,
@@ -45,11 +45,32 @@ body,
 .project-info .coming-soon { margin-left: auto; font: 500 9px 'Geist Mono', monospace; letter-spacing: .55px; text-transform: uppercase; color: #66716a; border: 1px solid #c9ccc5; border-radius: 100px; padding: 6px 9px; white-space: nowrap; }
 .project:hover .project-info > b { transform: none; }
 
+.agent-prompt em { font-family: 'Geist', sans-serif; }
+
+/* The light AI signal card needs its own foreground in dark mode. */
+.card-two { color: #17191a; }
+
 /* Reserve a clear reading column beside the interactive hero workspace. */
 @media (min-width: 761px) {
+  .hero-copy { max-width: 820px; }
   .hero .intro {
     margin-left: 0;
     max-width: 430px;
+  }
+}
+
+/* Stack the AI workspace beneath copy before the desktop layout becomes crowded. */
+@media (min-width: 761px) and (max-width: 1700px) {
+  .hero {
+    min-height: 1080px;
+    justify-content: flex-start;
+  }
+  .hero-copy { margin: 9vh 0 0; }
+  .hero-art {
+    left: 50%;
+    right: auto;
+    bottom: 52px;
+    transform: translateX(-50%);
   }
 }
 
@@ -73,7 +94,62 @@ body,
   body.dark { background: #171919; }
 }
 
-@media (max-width:760px) { .hero-art { width:310px; height:270px; right:-70px; bottom:90px; }.hero-art-label,.ai-panel { display:none; }.ai-grid{background-size:24px 24px}.ai-node span{display:none}.node-a{left:13%;top:59%}.node-b{left:31%;top:25%}.node-core{left:52%;top:49%}.node-d{left:75%;top:18%}.node-e{left:87%;top:51%}.node-f{left:61%;top:78%} }
+@media (max-width:760px) { .hero{min-height:900px}.hero-art { width:310px; height:270px; right:-70px; bottom:28px; }.hero-art-label,.ai-panel { display:none; }.ai-grid{background-size:24px 24px}.ai-node span{display:none}.node-a{left:13%;top:59%}.node-b{left:31%;top:25%}.node-core{left:52%;top:49%}.node-d{left:75%;top:18%}.node-e{left:87%;top:51%}.node-f{left:61%;top:78%} }
+
+/* Final responsive placement: keep the artwork below the reading column. */
+.hero { container-type: inline-size; }
+@container (max-width: 1500px) {
+  .hero-art { display: none; }
+}
+.hero-art { display: none !important; }
+@media (max-width: 3200px) {
+  .hero-art { display: none !important; }
+}
+
+/* On compact screens, the AI workspace becomes a separate lower hero row. */
+@media (max-width: 1100px) {
+  .hero { min-height: 1040px; }
+  .hero-art {
+    display: block !important;
+    width: 430px;
+    height: 365px;
+    left: 50%;
+    right: auto;
+    bottom: 32px;
+    transform: translateX(-50%);
+  }
+  .hero-art-label { display: none; }
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: 930px; }
+  .hero-art {
+    width: 310px;
+    height: 270px;
+    right: -42px;
+    left: auto;
+    bottom: 24px;
+    transform: none;
+  }
+  .agent-window { transform: scale(.78); transform-origin: top left; }
+  .card-one { transform: scale(.74) rotate(8deg); transform-origin: top right; }
+  .card-two { transform: scale(.75) rotate(-6deg); transform-origin: bottom left; }
+}
+@media (min-width: 761px) and (max-width: 1700px) {
+  .hero { min-height: 1080px; justify-content: flex-start; }
+  .hero-copy { margin: 9vh 0 0; }
+  .hero-art {
+    left: 50%;
+    right: auto;
+    bottom: 52px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1700px) {
+  .hero-art { display: none; }
+  .hero { min-height: 720px; }
+}
 
 /* Alternate direction: an AI product copilot workspace. */
 .agent-stage{position:relative;width:100%;height:100%;transition:transform .3s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}.agent-halo{position:absolute;border-radius:50%;filter:blur(2px);transition:.5s ease}.halo-one{width:290px;height:290px;right:72px;top:38px;background:radial-gradient(circle,rgba(120,183,255,.28),rgba(120,183,255,.03) 60%,transparent 70%)}.halo-two{width:160px;height:160px;right:18px;bottom:19px;background:radial-gradient(circle,rgba(201,243,106,.32),transparent 68%)}.agent-window{position:absolute;top:50px;left:76px;width:300px;background:rgba(24,29,30,.95);color:#f2f1eb;border:1px solid #3e4846;border-radius:10px;overflow:hidden;box-shadow:24px 26px 55px rgba(27,38,47,.23);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}.agent-bar{height:39px;border-bottom:1px solid #3b4442;padding:0 13px;display:flex;align-items:center;justify-content:space-between;font:9px 'Geist Mono',monospace;letter-spacing:.65px;color:#b5bbb4}.agent-bar span i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#c9f36a;margin:0 7px 1px 0;box-shadow:0 0 9px #c9f36a}.agent-prompt{margin:15px;padding:15px;background:#2a302f;border-radius:6px;position:relative}.agent-prompt span,.agent-thinking span,.insight-card span{font:9px 'Geist Mono',monospace;letter-spacing:.8px;color:#9da6a0}.agent-prompt p{font:500 19px/1.04 'Geist',sans-serif;letter-spacing:-.8px;margin:10px 0 0}.agent-prompt em{font-family:'Instrument Serif',serif;font-weight:400}.agent-prompt>b{position:absolute;right:11px;bottom:11px;width:22px;height:22px;display:grid;place-items:center;background:#c9f36a;color:#1e2421;border-radius:4px;font:17px 'Geist',sans-serif}.agent-thinking{padding:2px 30px 25px;display:flex;align-items:center;gap:6px}.agent-thinking span{margin-right:5px}.agent-thinking i{display:block;width:4px;height:4px;border-radius:50%;background:#78b7ff;animation:think 1.2s infinite}.agent-thinking i:nth-of-type(2){animation-delay:.15s}.agent-thinking i:nth-of-type(3){animation-delay:.3s}@keyframes think{50%{transform:translateY(-4px);background:#c9f36a}}.insight-card{position:absolute;padding:15px 16px;border-radius:8px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;box-shadow:10px 13px 27px rgba(27,38,47,.12)}.insight-card b,.insight-card p{display:block}.card-one{width:166px;right:17px;top:35px;background:#e3edaf;color:#29322a;transform:rotate(8deg)}.card-one b{font-size:14px;margin-top:21px}.card-one p{font:15px/1.13 'Geist',sans-serif;letter-spacing:-.6px;margin:4px 0}.card-one>i{position:absolute;right:14px;top:14px;font-style:normal}.card-two{width:170px;left:19px;bottom:28px;background:#f1f0eb;border:1px solid #d0d2ca;transform:rotate(-6deg)}.card-two b{font:500 27px 'Geist',sans-serif;letter-spacing:-1px;margin-top:18px}.card-two p{font-size:10px;color:#68716b;margin:1px 0 9px}.card-two div{height:4px;background:linear-gradient(90deg,#3e7fd4 73%,#d9ddda 73%)}.agent-cursor{position:absolute;right:95px;bottom:67px;color:#3e7fd4;font-size:25px;filter:drop-shadow(0 3px 4px rgba(62,127,212,.35));animation:cursorFloat 2.8s ease-in-out infinite}@keyframes cursorFloat{50%{transform:translate(8px,-9px)}}.hero-art:hover .agent-window{transform:translate(-10px,-9px) rotate(-1.5deg);box-shadow:31px 36px 60px rgba(27,38,47,.3)}.hero-art:hover .card-one{transform:translate(9px,-16px) rotate(4deg)}.hero-art:hover .card-two{transform:translate(-9px,8px) rotate(-2deg)}.hero-art:hover .agent-cursor{animation-play-state:paused;transform:translate(-11px,-13px) scale(1.25)}
