@@ -1,0 +1,29 @@
+<!doctype html>
+<script>(()=>{const key='sankalp-portfolio-theme';let theme;try{theme=localStorage.getItem(key)}catch(_){}theme||=(document.cookie.match(/(?:^|; )sankalp-portfolio-theme=(dark|light)/)||[])[1];if(theme==='dark'){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('dark'),{once:true})}})();</script>
+<script>document.addEventListener('DOMContentLoaded',()=>{const hero=document.querySelector('.consent-case');if(!hero)return;const links=document.createElement('div');links.className='project-links';links.innerHTML='<a href="https://github.com/sankalpjoshiux/SetOnce" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.2a6.8 6.8 0 0 0-2.15 13.25c.34.06.46-.14.46-.32v-1.2c-1.88.4-2.28-.8-2.28-.8-.3-.8-.75-1-.75-1-.62-.42.05-.42.05-.42.68.05 1.04.7 1.04.7.6 1.04 1.58.74 1.97.57.06-.44.24-.74.43-.91-1.5-.17-3.08-.75-3.08-3.35 0-.74.26-1.34.7-1.82-.08-.17-.3-.86.06-1.8 0 0 .57-.18 1.87.7A6.48 6.48 0 0 1 8 6.1c.58 0 1.15.08 1.69.23 1.3-.88 1.87-.7 1.87-.7.36.94.14 1.63.07 1.8.43.48.69 1.08.69 1.82 0 2.61-1.58 3.18-3.09 3.35.25.2.46.57.46 1.15v1.7c0 .18.12.39.46.32A6.8 6.8 0 0 0 8 1.2Z" fill="currentColor"/></svg>View repo on GitHub ↗</a>';hero.append(links);});</script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>SetOnce — Sankalp Joshi</title><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet"><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../theme.css"></head><body class="case-study"><header><a class="brand" href="../index.html"><span>✦</span> SANKALP JOSHI</a><a class="case-back" href="../index.html#experiments">← Back to experiments</a></header><main><section class="case-hero consent-case"><p class="case-label">Case study / Chrome extension</p><h1>Set<br><em>Once</em></h1><p class="case-lede">Set your cookie choice once. Stop answering the same question everywhere.</p><div class="case-visual"><span>Privacy preferences</span><b>Managed as you browse.</b><i>✓</i></div></section><article class="case-content">
+<section><h2>The annoyance</h2>
+<p>I was dismissing cookie banners <strong>10–15 times a week</strong>.</p>
+<p>News sites, shopping sites, blogs. Different banners, same task. I already knew what I wanted to choose, yet every site asked me again.</p>
+<p>It was a tiny interruption, but that repetition made me wonder: <strong>why am I making the same decision over and over?</strong></p></section>
+<section><h2>The idea</h2>
+<p>My first thought was to hide the banners. Existing extensions already do that, but hiding a banner doesn't always submit a real consent choice.</p>
+<p>I wanted something different:</p>
+<p><strong>Choose once. Apply that choice automatically everywhere.</strong></p>
+<p>So I built <strong>SetOnce</strong>, a Chrome extension that stores your cookie preference and applies it as sites load.</p></section>
+<section><h2>How it works</h2>
+<p>The web is less fragmented than it looks. Many sites use the same consent platforms, including <strong>OneTrust, Cookiebot, Didomi, and IAB TCF</strong>.</p>
+<p>Instead of blindly finding and clicking buttons, SetOnce detects the platform and uses its consent functions to submit the user's choice.</p>
+<p>Users can choose:</p>
+<ul><li>Accept all</li><li>Reject non-essential cookies</li><li>Set their own mix of functional, analytics, and marketing cookies</li></ul>
+<p>For custom banners, the extension falls back to matching common actions such as “Accept All” and “Reject All.”</p>
+<p>I also added a <strong>history log</strong> showing where SetOnce acted, what it chose, and when. What started as a small extra became important: automation is much easier to trust when you can see what it did.</p></section>
+<section><h2>The result</h2>
+<p>Setup takes a few seconds.</p>
+<p>After that, SetOnce handles a decision I used to repeat <strong>10–15 times each week</strong>.</p>
+<p>It doesn't just hide the interruption. It submits the choice I would have made myself.</p></section>
+<section><h2>What’s next</h2>
+<p>The main gap is custom consent banners. Generic button matching works often, but unusual wording and embedded banners can still cause problems.</p>
+<p>A stronger version would use a maintained library of site-specific rules, much like browser filter lists.</p>
+<p><strong>A small tool for a small annoyance. One less repeated decision to make.</strong></p></section>
+</article></main><footer><a class="brand" href="../index.html"><span>✦</span> SANKALP JOSHI</a><span>© 2026 · Made with care.</span><button id="theme-toggle" aria-label="Toggle theme">◐</button></footer><script src="../script.js"></script></body></html>
