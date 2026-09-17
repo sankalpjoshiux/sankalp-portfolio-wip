@@ -531,12 +531,43 @@ main > .hero {
 a:focus-visible, button:focus-visible { outline: 3px solid #000; outline-offset: 5px; box-shadow: 0 0 0 5px #fff; }
 .contact .email { max-width: 100%; white-space: normal; overflow-wrap: anywhere; font-size: clamp(16px, 2vw, 22px); }
 .email span { margin-left: 10px; }
+.contact .socials a {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  padding: 12px 24px;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+.contact .socials a:hover { background: #fff; color: var(--terracotta); }
+.contact .email,
+.contact .socials { display: inline-flex; vertical-align: top; }
+.contact-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 45px; }
+.contact-actions .email { margin-top: 0; }
+.contact .socials { margin: 0 !important; vertical-align: top; align-items: center; }
+.footer-links { display: flex; align-items: center; gap: 14px; margin: 0; }
+.footer-links a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; color: var(--ink); text-decoration: none; }
+.footer-links a svg { width: 22px; height: 22px; }
+.footer-links a:hover { color: var(--accent-text); }
+footer { position: relative; }
+footer > span { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; }
+footer .footer-links { position: absolute; top: 50%; right: calc(5.5vw + 48px); transform: translateY(-50%); }
+footer #theme-toggle { position: absolute; top: 50%; right: 5.5vw; width: 32px; min-width: 32px; height: 32px; min-height: 32px; padding: 0; font-size: 22px; line-height: 1; transform: translateY(-50%); }
 .case-study header { position: relative; height: auto; min-height: 78px; gap: 20px; flex-wrap: wrap; padding-block: 16px; }
 .case-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 48px; }
 .case-hero > .case-label, .case-hero > h1, .case-hero > .case-lede, .case-hero > .project-links { grid-column: 1; margin-block: 0; }
 .case-hero .case-visual { position: relative; inset: auto; grid-column: 2; grid-row: 1 / 5; align-self: center; width: 100%; transform: none; }
 .case-hero h1 { font-size: clamp(56px, 7vw, 100px); line-height: 1.05; }
 .consent-case h1 br { display: none; }
+.project-art,
+.independent-art,
+.case-visual,
+.screenshot-grid img,
+.competitor-grid img {
+  border-radius: 24px;
+}
 .work-section .project-info .coming-soon {
   color: rgba(255, 255, 255, .86);
   background: transparent;
@@ -567,6 +598,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid #000; outline-offset:
 .project-links { align-items: flex-start; }
 .project-links a { padding: 12px 22px; }
 .project-links a svg { width: 20px !important; height: 20px !important; flex-basis: 20px; }
+.icon-tabler { width: 1.15em; height: 1.15em; margin-left: .35em; flex: 0 0 1.15em; stroke-width: 2; vertical-align: -.18em; }
+.scroll-prompt .icon-tabler { margin-left: .45em; }
+.contact .email .icon-tabler { margin-left: .35em; }
 .reveal { opacity: 1; animation: none; transform: none; }
 body.dark,
 html.dark {
@@ -686,4 +720,12 @@ body.dark .availability {
 .scroll-prompt:hover { color: var(--terracotta-highlight); }
 @media (max-width: 760px) {
   .availability, body.dark .availability { font-size: 13px; }
+  footer { gap: 14px; }
+  .footer-links { gap: 10px; }
+  .footer-links a { font-size: 14px; }
+  footer > span { font-size: 12px; }
+  footer .brand { font-size: 11px; }
+  footer .footer-links { right: 68px; }
+  footer #theme-toggle { right: 24px; }
+  .contact-actions { align-items: flex-start; }
 }

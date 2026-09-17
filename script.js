@@ -33,3 +33,38 @@ if (themeToggle) {
     applyTheme(theme);
   });
 }
+
+// Use Tabler-style outline arrows for interactive labels instead of text glyphs.
+const tablerArrow = (direction) => {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.classList.add('icon-tabler');
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', 'currentColor');
+  path.setAttribute('stroke-width', '2');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('stroke-linejoin', 'round');
+  path.setAttribute('d', direction === 'down' ? 'M12 5v14m6-6-6 6-6-6' : direction === 'up-right' ? 'M5 19 19 5m-7 0h7v7' : 'M5 12h14m-6-6 6 6-6 6');
+  svg.append(path);
+  return svg;
+};
+const decorateArrows = () => {
+  document.querySelectorAll('.scroll-prompt b, .independent-info > b, .line-link b, .contact .email span, .socials a, .project-links a').forEach((element) => {
+    const text = element.textContent.trim();
+    const glyph = text.endsWith('↗') ? '↗' : text.endsWith('→') ? '→' : text.endsWith('↓') ? '↓' : '';
+    if (!glyph || element.dataset.arrowIcon) return;
+    element.dataset.arrowIcon = 'true';
+    const direction = glyph === '↗' ? 'up-right' : glyph === '↓' ? 'down' : 'right';
+    element.querySelectorAll('*').forEach((child) => {
+      if (child.tagName === 'svg') child.setAttribute('aria-hidden', 'true');
+    });
+    element.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) node.textContent = node.textContent.replace(glyph, '');
+    });
+    element.append(tablerArrow(direction));
+  });
+};
+decorateArrows();
+document.addEventListener('DOMContentLoaded', decorateArrows);
