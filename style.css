@@ -3,6 +3,7 @@
 .work-section { padding: 150px 8vw 130px; }
 .project-grid { gap: 36px; }
 @media (max-width:760px) { .work-section { padding: 90px 24px; } .project { margin-bottom: 56px; } }
+
 /* Give selected-work tiles a clearer rhythm. */
 .project-grid { gap: 56px 44px; }
 .project { padding: 0 12px 28px; }

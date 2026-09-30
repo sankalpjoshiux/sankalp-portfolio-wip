@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E73HMGR2G"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-8E73HMGR2G');</script>
+  <script>(()=>{const key='sankalp-portfolio-theme';let theme;try{theme=localStorage.getItem(key)}catch(_){}theme||=(document.cookie.match(/(?:^|; )sankalp-portfolio-theme=(dark|light)/)||[])[1];if(theme==='dark'){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('dark'),{once:true})}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Audience Agent: an AI agent that turns marketing goals into audience definitions, reducing the need for marketers to understand complex data schemas and Boolean logic.">
+  <title>Making audience creation accessible to marketers with AI — Sankalp Joshi</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20260929">
+  <link rel="stylesheet" href="../theme.css?v=20260929">
+  <link rel="stylesheet" href="case-components.css?v=20260929">
+  <link rel="stylesheet" href="agentic-audiences.css?v=20260929">
+</head>
+<body class="case-study agentic-study">
+  <header>
+    <a class="brand" href="../index.html"><span>✦</span> SANKALP JOSHI</a>
+    <a class="case-back" href="../index.html#work">← Back to selected work</a>
+  </header>
+  <main>
+    <section class="case-hero agentic-case">
+      <p class="case-label">Case study / Audience Agent</p>
+      <h1>Making audience creation accessible to marketers <em>with AI</em></h1>
+      <p class="case-lede">An AI agent that turns marketing goals into audience definitions, reducing the need for marketers to understand complex data schemas and Boolean logic.</p>
+      <figure class="agentic-hero-art">
+        <img src="../assets/audience-agent/12-build-prompt-landscape.png" width="1600" height="1200" fetchpriority="high" alt="Audience Agent's 'Build your next audience' prompt, surrounded by quick prompts such as Recent purchasers and Cart abandoners">
+      </figure>
+    </section>
+
+    <aside class="case-facts" aria-label="Project overview">
+      <div><span>My role</span><b>Lead product designer</b></div>
+      <div><span>Design scope</span><b>Agentic UX, research, evals</b></div>
+      <div><span>Partners</span><b>PM, Engineering, GTM, Product</b></div>
+      <div><span>Platform</span><b>mParticle · 2026</b></div>
+    </aside>
+
+    <article class="case-content agentic-content">
+      <section class="case-introduction">
+        <p class="chapter">Overview</p>
+        <h2>Audience Agent</h2>
+        <div class="case-summary">
+          <div><span>My role</span><p>Led the design of Audience Agent: customer research, UX vision, agentic design principles, end-to-end flows, and agent evals.</p></div>
+          <div><span>What shipped</span><p>Single-node and composable audience creation workflows, with responses shortened by roughly 25-30%.</p></div>
+        </div>
+      </section>
+
+      <figure class="case-video">
+        <video src="../assets/audience-agent-demo.mp4" autoplay muted loop playsinline preload="auto" aria-label="Audience Agent building an audience from a plain-language request"></video>
+      </figure>
+
+      <section>
+        <p class="chapter">01 / The problem</p>
+        <h2>Marketers knew who they wanted to reach, but not how to find them.</h2>
+        <p>Marketers knew which customers they wanted to reach, but building those audiences in mParticle required technical knowledge. They had to understand their company's data schema, identify the right events and attributes, and combine them using Boolean logic.</p>
+        <p>Similar event names and multiple data sources made it easy to select the wrong data. As a result, many marketers wrote audience requirements and handed them to data engineers, who built and maintained the audiences.</p>
+        <blockquote>An analysis of calls across 20 customer accounts found that nine struggled with manual audience creation and seven had trouble finding the right data.</blockquote>
+      </section>
+
+      <section class="decision-section">
+        <p class="chapter">02 / The approach</p>
+        <h2>Let marketers describe the audience. Let the agent do the rest.</h2>
+        <p>The goal was to let marketers describe the audience they wanted in plain language, then have the agent find relevant data and propose a definition they could review. Three design decisions shaped the experience.</p>
+        <div class="decision-options cols-3">
+          <div><div class="option-meta"><span>Decision 01</span></div><h3>Design for ambiguity</h3><p>A marketer might provide exact criteria or simply describe a campaign goal. I designed different paths for these requests, defining when the agent should proceed, ask focused questions, or explain that it lacked enough information.</p></div>
+          <div><div class="option-meta"><span>Decision 02</span></div><h3>Combine conversation with structured UI</h3><p>Rather than rely on text alone, I explored audience cards, size estimates, and ways to compare options, helping users inspect the agent's work and make changes without writing another prompt for every decision.</p></div>
+          <div><div class="option-meta"><span>Decision 03</span></div><h3>Keep users in control</h3><p>The agent needed to show which data it used, explain its assumptions, and obtain approval before creating an audience. When it couldn't complete a request safely, it needed to offer a clear next step.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <p class="chapter">03 / Testing and iteration</p>
+        <h2>Trust broke down when the agent said too much.</h2>
+        <p>Early tests exposed a problem: the agent's responses were too long. With roughly six turns per audience creation, users had to read too much text before reaching a usable result.</p>
+        <p>We shortened responses by approximately 25-30%, cutting down up to 800 words from a typical conversation. I also worked with engineering to replace technical progress messages with language users could understand.</p>
+        <p>I proposed a hybrid experience with interactive cards and chat, but early engineering constraints meant the initial version relied more heavily on text.</p>
+      </section>
+
+      <section>
+        <p class="chapter">04 / Outcome</p>
+        <h2>Two shipped versions, and a lighter agent.</h2>
+        <div class="product-model cols-2" aria-label="Two outcome metrics">
+          <div><span>Shipped</span><b>2 versions</b><p>Single-node and composable audience creation workflows.</p></div>
+          <div><span>Result</span><b>~25-30% shorter</b><p>Responses shortened, cutting up to 800 words from a typical conversation.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <p class="chapter">05 / The product</p>
+        <h2>From building one audience to working across mParticle.</h2>
+        <div class="case-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Audience Agent product walkthrough">
+          <div class="carousel-head">
+            <div class="carousel-tabs" role="group" aria-label="Chapters">
+              <button type="button" data-chapter="1"><span>01</span>Make audience creation easier</button>
+              <button type="button" data-chapter="2"><span>02</span>Scale to more complex workflows</button>
+              <button type="button" data-chapter="3"><span>03</span>Expand beyond audience creation</button>
+            </div>
+            <div class="carousel-controls">
+              <span class="carousel-count" data-count aria-live="polite">1 / 9</span>
+              <button type="button" data-prev aria-label="Previous slide">←</button>
+              <button type="button" data-next aria-label="Next slide">→</button>
+            </div>
+          </div>
+          <div class="carousel-track" tabindex="0" aria-label="Slides">
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/audience-agent/01-entry-point.png" width="1600" height="1200" alt="Create Audience dialog with Build with mParticle's Agent as the recommended option above manual ways to start">
+              <figcaption><span>01 · Make audience creation easier</span><h3>Meet users where they already work</h3><p>I placed the agent alongside existing ways to create an audience instead of forcing users into a new workflow. Marketers could choose AI assistance while experienced users could keep building manually.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/audience-agent/02-goal-prompt.png" width="1600" height="1200" loading="lazy" alt="Build your next audience screen with a plain-language prompt field and quick prompt suggestions">
+              <figcaption><span>01 · Make audience creation easier</span><h3>Start with the goal, not the schema</h3><p>Instead of asking marketers to choose events, attributes and filters, the agent starts with a plain-language goal. Quick prompts also help users who know what they want to achieve but don’t know how to express it as audience criteria.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/audience-agent/03-proposed-definition.png" width="1600" height="1200" loading="lazy" alt="The prompt 'Build a suppression audience of recent converters' connected to a proposed audience card showing its definition and estimated size of about 2.1 million">
+              <figcaption><span>01 · Make audience creation easier</span><h3>Turn intent into something concrete</h3><p>The agent translates a marketing goal into a proposed audience definition, including the event, time window and estimated size. This gives users something specific to inspect and refine instead of a long text response.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/audience-agent/04-health-check.png" width="1600" height="1200" loading="lazy" alt="Audience summary marked ready for activation, with a health check covering size, overlap and recent activity">
+              <figcaption><span>01 · Make audience creation easier</span><h3>Make the agent’s work easy to check</h3><p>Before anything is created, the agent summarizes the audience definition and checks signals such as size, overlap and recent activity. Users can refine the result or approve it themselves.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="2">
+              <img src="../assets/audience-agent/05-save-context.png" width="1600" height="1200" loading="lazy" alt="Create Audience dialog asking for an audience name, with an option to save the conversation">
+              <figcaption><span>02 · Scale to more complex workflows</span><h3>Keep useful context beyond the chat</h3><p>Audience creation doesn’t end with the conversation. I explored saving chat history with the audience so users could return to the reasoning behind a decision and reuse that context later.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="2">
+              <img src="../assets/audience-agent/06-audience-types.png" width="1600" height="1200" loading="lazy" alt="New Audience screen with a Real-time and Composable toggle above the same natural-language prompt field">
+              <figcaption><span>02 · Scale to more complex workflows</span><h3>One entry point for different audience types</h3><p>As the agent expanded, the same natural-language entry point could support both real-time and composable audiences. Users choose the audience type without having to learn a separate AI workflow.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="2">
+              <img src="../assets/audience-agent/07-audience-structure.png" width="1600" height="1200" loading="lazy" alt="Audience structure diagram: a Customer Lifecycle Group containing Active, Lapsing and Lapsed Customers">
+              <figcaption><span>02 · Scale to more complex workflows</span><h3>From single audiences to connected audience groups</h3><p>The first version of the agent could create one audience at a time. I explored how it could handle more complex requests by creating multiple audiences at once and organizing them into parent-child relationships. The structure made the agent’s interpretation visible so users could review how each audience fit into the larger group.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="2">
+              <img src="../assets/audience-agent/08-refine-part.png" width="1600" height="1200" loading="lazy" alt="Prompt field with an @ menu listing Active, Lapsing and Lapsed Customers with their sizes">
+              <figcaption><span>02 · Scale to more complex workflows</span><h3>Let users refine parts of the result</h3><p>Complex audience groups need more than whole-response regeneration. I explored direct references to individual audiences so users could ask the agent to change one part while keeping the rest of the structure intact.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="3">
+              <img src="../assets/audience-agent/09-contextual-agent.png" width="1600" height="1200" loading="lazy" alt="A prediction chart with an Ask Higgs agent offering to explain the prediction or build an audience from it">
+              <figcaption><span>03 · Expand beyond audience creation</span><h3>Bring the agent to the task</h3><p>Predictions opened up workflows that crossed product boundaries. Instead of making users start a new conversation, I explored contextual entry points where the agent could explain a prediction or use it to build an audience.</p></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p class="chapter">06 / Key takeaways</p>
+        <h2>Agent behavior is a design problem.</h2>
+        <ul class="shipped-list cols-3">
+          <li>
+            <svg class="shipped-icon" viewBox="0 0 96 96" aria-hidden="true"><path d="M48 20a28 28 0 1 0 0 56 28 28 0 0 0 0-56Z"/><path d="M48 36v12l9 9"/></svg>
+            <strong>Agent behavior is a design problem</strong><span>Defining when an agent should act, ask, or stop was as important as designing the interface.</span>
+          </li>
+          <li>
+            <svg class="shipped-icon" viewBox="0 0 96 96" aria-hidden="true"><path d="M20 60c6-20 18-30 28-30s22 10 28 30"/><circle cx="48" cy="30" r="9"/></svg>
+            <strong>More information doesn't always create more trust</strong><span>Shorter responses, clear assumptions, and structured audience definitions helped make the agent's work easier to understand.</span>
+          </li>
+          <li>
+            <svg class="shipped-icon" viewBox="0 0 96 96" aria-hidden="true"><path d="M24 32h48M24 48h32M24 64h40"/></svg>
+            <strong>Conversation and UI serve different purposes</strong><span>Natural language makes it easier to express a goal, while structured controls help users review and refine the result.</span>
+          </li>
+        </ul>
+      </section>
+
+      <figure class="case-figure">
+        <img src="../assets/audience-agent/10-higgs-home.png" width="2400" height="1800" loading="lazy" alt="">
+        <figcaption>
+          <h3>From Audience Agent to a platform agent</h3>
+          <p>The longer-term direction brought specialized workflows into one agent. Users could explore their data, build audiences, create predictions and return to past conversations from a shared starting point.</p>
+        </figcaption>
+      </figure>
+    </article>
+
+    <nav class="case-next" aria-label="Case study navigation">
+      <span>Continue exploring</span>
+      <a href="../index.html#work">Back to selected work <b>↗</b></a>
+    </nav>
+  </main>
+  <footer>
+    <a class="brand" href="../index.html"><span>✦</span> SANKALP JOSHI</a>
+    <nav class="footer-links"><a href="https://www.linkedin.com/in/sankalpjoshi/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3.2V21h3.3V8.5ZM4.85 3A2 2 0 1 0 4.8 7a2 2 0 0 0 .05-4ZM21 13.8c0-3.75-2-5.5-4.65-5.5a4 4 0 0 0-3.6 1.98V8.5H9.45V21h3.3v-6.2c0-1.64.3-3.23 2.34-3.23 2 0 2.03 1.88 2.03 3.34V21H21v-7.2Z" fill="currentColor"/></svg></a><a href="https://github.com/sankalpjoshiux" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.2a6.8 6.8 0 0 0-2.15 13.25c.34.06.46-.14.46-.32v-1.2c-1.88.4-2.28-.8-2.28-.8-.3-.8-.75-1-.75-1-.62-.42.05-.42.05-.42.68.05 1.04.7 1.04.7.6 1.04 1.58.74 1.97.57.06-.44.24-.74.43-.91-1.5-.17-3.08-.75-3.08-3.35 0-.74.26-1.34.7-1.82-.08-.17-.3-.86.06-1.8 0 0 .57-.18 1.87.7A6.48 6.48 0 0 1 8 6.1c.58 0 1.15.08 1.69.23 1.3-.88 1.87-.7 1.87-.7.36.94.14 1.63.07 1.8.43.48.69 1.08.69 1.82 0 2.61-1.58 3.18-3.09 3.35.25.2.46.57.46 1.15v1.7c0 .18.12.39.46.32A6.8 6.8 0 0 0 8 1.2Z" fill="currentColor"/></svg></a></nav>
+    <span>© 2026 · Made with care.</span><button id="theme-toggle" aria-label="Toggle theme">◐</button>
+  </footer>
+  <script src="../script.js?v=20260929"></script>
+  <script src="case-carousel.js?v=20260929"></script>
+  <script src="scroll-top.js?v=20260929"></script>
+</body>
+</html>

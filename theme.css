@@ -729,3 +729,249 @@ body.dark .availability {
   footer #theme-toggle { right: 24px; }
   .contact-actions { align-items: flex-start; }
 }
+
+@font-face { font-family: 'Geist'; src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Geist Mono'; src: url('https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-mono/GeistMono-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+:root { --font-display: 'EB Garamond', Georgia, serif; --font-body: 'Geist', 'Helvetica Neue', Arial, sans-serif; --font-mono: 'Geist Mono', 'SFMono-Regular', Consolas, monospace; }
+
+/* Final typography overrides keep the system consistent across all page treatments. */
+body { font-family: var(--font-body); font-weight: 300; }
+header, footer, nav, button, input, .brand, .hero-top, .kicker, .scroll-prompt, .availability,
+.section-heading > p, .section-heading > span, .about-label, .principles > p, .project-info > span,
+.project-info > b, .independent-info .project-index, .independent-info > b, .contact > p,
+.email, .socials a, .case-label, .case-lede, .case-back, .repo-link, .project-links a,
+.gallery-label, .screenshot-grid figcaption, .competitor-grid figcaption, footer > span { font-family: var(--font-body); }
+.hero h1, .section-heading h2, .about-copy > p, .principle h3, .contact h2, .project-info h3,
+.independent-info h3, .case-hero h1, .case-content h2, .product-gallery h2, .case-placeholder h2,
+.lume-card b, .arc-ui strong, .flora-phone span, .meetwell-window > b { font-family: var(--font-display); }
+.hero h1 em, .section-heading h2 em, .about-copy em, .principle h3 em, .contact h2 em,
+.case-hero h1 em, .case-content em, .product-gallery h2 em, .case-placeholder h2 em { font-family: var(--font-display); }
+.hero-top, .kicker, .section-heading > p, .section-heading > span, .about-label,
+.principles > p, .case-label, .gallery-label, .project-info > span, .independent-info .project-index,
+.project-info .coming-soon { font-weight: 500; text-transform: uppercase; letter-spacing: .1em; }
+.hero .intro, .project-info p, .independent-info p, .case-content p, .case-content li,
+.case-lede, .principle p, .screenshot-grid figcaption span, .competitor-grid figcaption span { font-family: var(--font-body); font-weight: 300; line-height: 1.58; }
+.project-info p, .independent-info p, .case-content p, .case-content li { font-size: 17px; }
+.availability, .project-links a, .case-back, nav a, .socials a, .line-link, .scroll-prompt,
+#theme-toggle, .independent-info > b { font-weight: 500; }
+.agent-bar, .ai-panel, .ai-panel b, .hero-art-label, .agent-prompt span, .agent-thinking span,
+.insight-card span, .lume-card span, .arc-ui span, .case-visual span { font-family: var(--font-mono); }
+.lume-card small, .arc-ui strong small, .flora-phone small, .meeting-row small { font-family: var(--font-body); }
+.brand, footer > span { font-weight: 500; }
+@media (max-width: 760px) {
+  .project-info p, .independent-info p, .case-content p, .case-content li { font-size: 16px; line-height: 1.55; }
+}
+
+/* Responsive foundation: one final source of truth across every page. */
+:root {
+  --page-gutter: clamp(24px, 5.5vw, 88px);
+  --section-space: clamp(76px, 10vw, 150px);
+  --reading-width: 780px;
+}
+html { min-width: 320px; }
+body { width: 100%; }
+img, svg { max-width: 100%; }
+main, section, article, header, footer, .project, .independent-card { min-width: 0; }
+h1, h2, h3, p, li, a { overflow-wrap: break-word; }
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+header, footer { padding-inline: var(--page-gutter); }
+.hero, .work-section, .independent-section { padding-inline: var(--page-gutter); }
+.about-section, .principles, .contact { padding-inline: max(var(--page-gutter), 8vw); }
+
+.hero h1 {
+  font-size: clamp(48px, min(7.4vw, 11svh), 112px);
+  line-height: .96;
+  letter-spacing: -.045em;
+}
+.hero .intro { max-width: 600px; font-size: clamp(17px, 1.45vw, 21px); }
+.section-heading { max-width: min(820px, 100%); }
+.section-heading h2 { font-size: clamp(42px, 5vw, 72px); line-height: .98; letter-spacing: -.035em; }
+.about-copy > p { font-size: clamp(38px, 5vw, 72px); }
+.principle h3 { font-size: clamp(32px, 3.8vw, 58px); }
+.contact h2 { font-size: clamp(58px, 8vw, 120px); }
+
+.work-section .project,
+.independent-section .independent-card {
+  grid-template-columns: minmax(280px, 1fr) minmax(300px, .85fr);
+  column-gap: clamp(30px, 6vw, 92px);
+}
+.work-section .project-info h3,
+.independent-section .independent-info h3 { font-size: clamp(28px, 3vw, 46px); }
+
+.case-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, .9fr);
+  gap: clamp(28px, 5vw, 72px);
+  padding: clamp(72px, 9vw, 130px) max(var(--page-gutter), 8vw);
+  min-height: auto;
+}
+.case-hero h1 { font-size: clamp(54px, 7vw, 100px); line-height: .96; letter-spacing: -.035em; }
+.case-hero .case-lede { max-width: 560px; font-size: clamp(17px, 1.4vw, 21px); }
+.case-hero .case-visual { min-width: 0; max-width: 520px; justify-self: end; }
+.case-content {
+  width: min(100%, var(--reading-width));
+  max-width: var(--reading-width);
+  padding: clamp(76px, 9vw, 112px) var(--page-gutter) clamp(90px, 10vw, 132px);
+}
+.case-content h2 { font-size: clamp(36px, 4vw, 52px); line-height: 1; letter-spacing: -.025em; }
+.case-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.product-model, .experience-model { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.decision-options, .case-summary, .shipped-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.reach-preview { max-width: calc(100vw - (2 * var(--page-gutter))); }
+
+@media (max-width: 980px) {
+  .case-hero { display: flex; flex-direction: column; }
+  .case-hero .case-visual { width: min(100%, 560px); max-width: 560px; align-self: center; margin-top: 24px; }
+  .case-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work-section .project,
+  .independent-section .independent-card { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+  .work-section .project .project-art,
+  .independent-section .independent-art { max-width: 760px; justify-self: center; }
+  .work-section .project-info,
+  .independent-section .independent-info { width: min(100%, 760px); justify-self: center; }
+}
+
+@media (max-width: 760px) {
+  :root { --page-gutter: clamp(20px, 6vw, 28px); --section-space: 84px; }
+  body:not(.case-study) > header, .case-study header { padding-block: 13px; min-height: 68px; }
+  header nav { gap: 6px 16px; }
+  .hero { min-height: max(680px, 100svh); padding-top: 96px; padding-bottom: 36px; }
+  .hero h1 { font-size: clamp(44px, 13vw, 64px); line-height: .96; letter-spacing: -.04em; }
+  .hero .intro { margin-top: 24px; font-size: 17px; line-height: 1.5; }
+  .hero-art { width: min(330px, 88vw); right: -62px; bottom: 24px; }
+  .work-section, .independent-section, .about-section, .principles, .contact { padding-block: var(--section-space); }
+  .section-heading, .independent-section .section-heading { margin-bottom: 46px; }
+  .section-heading h2 { font-size: clamp(40px, 12vw, 54px); }
+  .work-section .project-grid, .independent-section .independent-grid { gap: 64px; }
+  .work-section .project, .independent-section .independent-card { padding: 0; margin: 0; }
+  .work-section .project .project-art, .independent-section .independent-art { width: 100%; aspect-ratio: 4 / 3; height: auto !important; margin: 0; }
+  .work-section .project-info, .independent-section .independent-info { grid-template-columns: 30px minmax(0, 1fr); gap: 10px 12px; }
+  .work-section .project-info h3, .independent-section .independent-info h3 { font-size: clamp(28px, 9vw, 36px); }
+  .work-section .project-info p, .independent-section .independent-info p { font-size: 16px; }
+  .about-copy > p { font-size: clamp(38px, 12vw, 52px); }
+  .principle h3 { font-size: clamp(32px, 10vw, 42px); }
+  .contact h2 { font-size: clamp(56px, 18vw, 76px); }
+  .case-hero { padding: 58px var(--page-gutter) 68px; }
+  .case-hero h1, .household-case h1 { font-size: clamp(48px, 15vw, 68px) !important; line-height: .95 !important; }
+  .case-hero .case-visual { height: clamp(245px, 72vw, 320px) !important; padding: clamp(22px, 6vw, 32px); }
+  .case-content { padding-inline: var(--page-gutter); }
+  .case-content section { padding-bottom: 48px; margin-bottom: 48px; }
+  .case-content h2, .household-content section:has(.shipped-list) h2 { font-size: clamp(34px, 10vw, 42px); }
+  .case-facts, .product-model, .experience-model, .decision-options, .case-summary, .shipped-list { grid-template-columns: minmax(0, 1fr); }
+  .case-facts > div { padding: 20px var(--page-gutter); }
+  .reach-preview { margin-inline: 0; padding: 24px 20px; }
+  .case-next { padding: 68px var(--page-gutter); }
+  .case-next > a { font-size: clamp(32px, 10vw, 42px); }
+  footer { min-height: 80px; height: auto; padding-block: 18px; }
+  footer > span { display: none; }
+  footer .footer-links { position: static; transform: none; margin-left: auto; }
+  footer #theme-toggle { position: static; transform: none; margin-left: 8px; }
+}
+
+@media (max-width: 420px) {
+  .case-back { font-size: 14px; }
+  .case-study header .brand { max-width: 135px; }
+  .hero-top { gap: 14px; }
+  .hero-top span:last-child { text-align: right; }
+  .household-visual-top { align-items: flex-start; gap: 12px; }
+  .household-visual-top > b { font-size: 16px; white-space: nowrap; }
+  .reach-header, .reach-legend { flex-direction: column; }
+  .reach-metric strong { font-size: 46px; }
+}
+
+/* Homepage alignment and consistent portfolio media frames. */
+.hero-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.hero-location {
+  color: var(--muted);
+  font: 500 14px/1.5 var(--font-body);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.work-section .project .project-art,
+.work-section .project:first-child .project-art,
+.independent-section .independent-art {
+  width: 620px;
+  max-width: 100%;
+  height: auto !important;
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+.work-section .project-info .project-cta,
+.independent-section .independent-info .project-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 6px 0 0;
+  padding: 11px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font: 500 14px/1 var(--font-body);
+  letter-spacing: .02em;
+  text-transform: none;
+  white-space: nowrap;
+  transition: color .2s ease, background-color .2s ease;
+}
+
+/* One shared behavior for every live case-study card (work + experiments). */
+a.project,
+a.independent-card { cursor: pointer; text-decoration: none; }
+
+a.project:focus-visible,
+a.independent-card:focus-visible { outline: none; }
+
+.project-cta > .icon-tabler { transition: transform .2s ease; }
+
+a.project:hover .project-cta,
+a.project:focus-visible .project-cta,
+a.independent-card:hover .project-cta,
+a.independent-card:focus-visible .project-cta {
+  color: #fff;
+  border-color: var(--accent-readable);
+  background: var(--accent-readable);
+  transform: none;
+}
+
+a.project:hover .project-cta > .icon-tabler,
+a.project:focus-visible .project-cta > .icon-tabler,
+a.independent-card:hover .project-cta > .icon-tabler,
+a.independent-card:focus-visible .project-cta > .icon-tabler { transform: translate(2px, -2px); }
+
+body.dark .independent-section .independent-info .project-cta { color: #fff; }
+
+.work-section a.project:focus-visible .project-cta { outline: 2px solid #fff; outline-offset: 3px; }
+.independent-section a.independent-card:focus-visible .project-cta { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-cta, .project-cta > .icon-tabler { transition: none; }
+}
+
+@media (max-width: 760px) {
+  .hero-bottom { align-items: flex-end; }
+  .hero-location { max-width: 130px; text-align: right; white-space: normal; }
+  .work-section .project .project-art,
+  .work-section .project:first-child .project-art,
+  .independent-section .independent-art {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+}
+
+/* Layered project art: a background painting fills the tile, the UI floats on top of it. */
+.project-lume .project-art { position: relative; overflow: hidden; background: #dcc7a6; }
+.project-lume .project-art > img { position: absolute; display: block; }
+.project-lume .project-art > .art-bg { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.project-lume .project-art > .art-fg { top: 50%; left: 0; width: 100%; height: auto; transform: translateY(-50%); }

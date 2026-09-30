@@ -1,0 +1,48 @@
+.scroll-top {
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: calc(20px + var(--scroll-top-lift, 0px));
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 18px 11px 14px;
+  border: 1px solid var(--terracotta, #b84e36);
+  border-radius: 999px;
+  color: #fff;
+  background: var(--terracotta, #b84e36);
+  box-shadow: 0 10px 28px rgba(38, 36, 36, .22);
+  font: 500 14px/1 var(--font-body, 'Geist', 'Helvetica Neue', Arial, sans-serif);
+  letter-spacing: .02em;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s, background-color .2s ease;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity .25s ease, transform .25s ease, visibility 0s, background-color .2s ease;
+}
+
+.scroll-top svg { flex: none; width: 18px; height: 18px; transition: transform .2s ease; }
+
+@media (hover: hover) and (pointer: fine) {
+  .scroll-top:hover { background: #a8432c; }
+  .scroll-top:hover svg { transform: translateY(-2px); }
+}
+
+.scroll-top:focus-visible { outline: 2px solid var(--ink, #000); outline-offset: 3px; }
+body.dark .scroll-top:focus-visible { outline-color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top, .scroll-top.is-visible, .scroll-top svg { transition: none; }
+}
+
+@media (max-width: 480px) {
+  .scroll-top { padding: 11px 16px 11px 12px; }
+}

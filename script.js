@@ -51,7 +51,7 @@ const tablerArrow = (direction) => {
   return svg;
 };
 const decorateArrows = () => {
-  document.querySelectorAll('.scroll-prompt b, .independent-info > b, .line-link b, .contact .email span, .socials a, .project-links a').forEach((element) => {
+  document.querySelectorAll('.scroll-prompt b, .independent-info > b, .project-info > .project-cta, .line-link b, .contact .email span, .socials a, .project-links a').forEach((element) => {
     const text = element.textContent.trim();
     const glyph = text.endsWith('↗') ? '↗' : text.endsWith('→') ? '→' : text.endsWith('↓') ? '↓' : '';
     if (!glyph || element.dataset.arrowIcon) return;

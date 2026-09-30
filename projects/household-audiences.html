@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8E73HMGR2G"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-8E73HMGR2G');</script>
+  <script>(()=>{const key='sankalp-portfolio-theme';let theme;try{theme=localStorage.getItem(key)}catch(_){}theme||=(document.cookie.match(/(?:^|; )sankalp-portfolio-theme=(dark|light)/)||[])[1];if(theme==='dark'){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('dark'),{once:true})}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Household Reach: expanding customer targeting beyond the individual while preserving control over audience activation.">
+  <title>Expanding audience reach beyond the individual — Sankalp Joshi</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=20260929">
+  <link rel="stylesheet" href="../theme.css?v=20260929">
+  <link rel="stylesheet" href="case-components.css?v=20260929">
+  <link rel="stylesheet" href="household-audiences.css?v=20260929">
+</head>
+<body class="case-study household-study">
+  <header>
+    <a class="brand" href="../index.html"><span>✦</span> SANKALP JOSHI</a>
+    <a class="case-back" href="../index.html#work">← Back to selected work</a>
+  </header>
+  <main>
+    <section class="case-hero household-case">
+      <p class="case-label">Case study / Household Reach</p>
+      <h1>Expanding audience reach <em>beyond the individual</em></h1>
+      <p class="case-lede">Designed the end-to-end product model for household-level targeting, giving teams more reach while keeping control over where and how audiences expand.</p>
+      <div class="case-visual household-visual" aria-label="Diagram showing one audience member expanding to a connected household">
+        <div class="household-visual-top"><span>HOUSEHOLD EXPANSION</span><b>2.4× reach</b></div>
+        <div class="identity-map" aria-hidden="true">
+          <i class="identity source"></i><i class="identity member member-one"></i><i class="identity member member-two"></i><i class="identity member member-three"></i>
+          <span class="connection connection-one"></span><span class="connection connection-two"></span><span class="connection connection-three"></span>
+        </div>
+        <p>1 matched profile <span>→</span> 1 connected household</p>
+      </div>
+    </section>
+
+    <aside class="case-facts" aria-label="Project overview">
+      <div><span>My role</span><b>Product strategy, systems design</b></div>
+      <div><span>Design scope</span><b>UX architecture, cross-team alignment</b></div>
+      <div><span>Partners</span><b>Product, Engineering, GTM, Design</b></div>
+      <div><span>Platform</span><b>mParticle</b></div>
+    </aside>
+
+    <article class="case-content household-content">
+      <section class="case-introduction">
+        <p class="chapter">Overview</p>
+        <h2>Household Reach</h2>
+        <p>Most customer data platforms (CDPs) are designed around a single individual—multiple devices and multiple profiles all reconciling into a single user. However, customers do not always behave as individuals. Some buying decisions happen across families, shared accounts, and households.</p>
+        <p>I worked with Product, Engineering, GTM, and other design teams to create <strong>Household Reach</strong>, a native way for marketers to extend an audience to the relevant household members while keeping control over where the expanded audience gets used.</p>
+        <div class="case-summary">
+          <div><span>My role</span><p>Product strategy, systems design, UX architecture, and cross-team alignment.</p></div>
+          <div><span>What shipped</span><p>Household modeling, audience expansion, per-destination activation, and a shared expansion framework.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <p class="chapter">01 / The problem</p>
+        <h2>The 1:1 model broke down when the real buyer was a household.</h2>
+        <p>mParticle was primarily designed to combine fragmented customer data and resolve it into a single person. However, that 1:1 model broke down when the real buyer was a household and not an individual.</p>
+        <p>For some customers, shared accounts, families, and multiple decision-makers are the biggest influences on decision-making. Yet there was no native way to represent or activate these relationships in mParticle.</p>
+        <p>Customers worked around this limitation with warehouse SQL, custom attributes, CSV uploads, and other manual processes. The result was stale data, high engineering dependency, manual work, and fragmented targeting.</p>
+      </section>
+
+      <section>
+        <p class="chapter">02 / Research</p>
+        <h2>The whitespace was not household modeling. It was activation control.</h2>
+        <p>I mapped the end-to-end workflow, studied how customers were solving the problem, and compared approaches from Hightouch, Amperity, and Salesforce Data Cloud.</p>
+        <p>Competitors could model household-like entities, but none gave marketers control over <strong>which downstream connection received the expanded household audience</strong>.</p>
+        <blockquote>Instead of treating Household Reach as an identity feature, I made it an audience activation capability.</blockquote>
+      </section>
+
+      <section class="decision-section">
+        <p class="chapter">03 / The key product decision</p>
+        <h2>Keep the original audience intact. Expand only where it makes sense.</h2>
+        <p>There were two ways to build it:</p>
+        <div class="decision-options">
+          <div><div class="option-meta"><span>Option 01</span></div><h3>Audience-level expansion</h3><p>Modify the audience itself. Every connected destination receives household members.</p></div>
+          <div class="selected"><div class="option-meta"><span>Option 02</span><em>Selected</em></div><h3>Connection-level expansion</h3><p>Keep the original audience intact and turn household expansion on only for selected destinations.</p></div>
+        </div>
+        <p>That distinction mattered. A marketer might want household expansion for paid media, but not for an email campaign, warehouse export, or lifecycle message.</p>
+        <p>After working through the tradeoffs with Product, Engineering, and GTM, we chose <strong>connection-level activation</strong>. It gave customers more control, avoided duplicating audiences, reduced unnecessary compute (COGS), and created a differentiated capability that our competitors did not offer.</p>
+      </section>
+
+      <section class="model-section">
+        <p class="chapter">04 / Unification</p>
+        <h2>From one feature to a shared system.</h2>
+        <p>While designing Household Reach, I noticed two other product teams were solving closely related problems:</p>
+        <div class="product-model" aria-label="Three audience expansion capabilities">
+          <div>
+            <span>01</span>
+            <svg class="model-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="28" cy="23" r="9"/><path d="M12 50c2-10 8-15 16-15s14 5 16 15"/><path d="m48 16 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg>
+            <b>Match Boost</b><p>Enriched profiles before activation.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <svg class="model-icon" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="16" r="7"/><circle cx="17" cy="44" r="7"/><circle cx="47" cy="44" r="7"/><path d="m28 22-8 15M36 22l8 15M24 44h16"/></svg>
+            <b>Household Reach</b><p>Expanded audiences to related household members.</p>
+          </div>
+          <div>
+            <span>03</span>
+            <svg class="model-icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 46 27 31l9 8 16-20"/><path d="M42 19h10v10"/><path d="m16 13 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z"/></svg>
+            <b>Predictive expansion</b><p>Used AI to find additional likely customers.</p>
+          </div>
+        </div>
+        <p>They looked like separate features, but users saw them doing the same job:</p>
+        <div class="customer-need">
+          <img src="../assets/customer-need-thinking.png" alt="" aria-hidden="true">
+          <span>Customer need</span>
+          <p>Help me increase the number of valuable people I can reach.</p>
+        </div>
+        <p>Instead of adding three unrelated controls across the product, I worked across teams to move toward a shared <strong>audience expansion model</strong>. This became one of the most important changes in the project: moving from designing a feature to designing a system.</p>
+      </section>
+
+      <section>
+        <p class="chapter">05 / The experience</p>
+        <h2>Three jobs, one coherent workflow.</h2>
+        <p>I organized the product around three jobs:</p>
+        <div class="product-model experience-model" aria-label="Three connected stages in the Household Reach experience">
+          <div><small>Configure</small><b>Enablement</b><p>Data and marketing operations teams configure how households are formed.</p></div>
+          <div><small>Expand</small><b>Activation</b><p>Marketers choose where Household Reach should expand an audience.</p></div>
+          <div><small>Control</small><b>Governance</b><p>Teams review coverage, manage the feature, and control its use across connections.</p></div>
+        </div>
+        <p>The final experience kept household complexity out of the marketer’s core workflow. Existing audiences could gain Household Reach without being rebuilt or duplicated.</p>
+        <div class="reach-preview" aria-label="Audience reach preview">
+          <div class="reach-header"><span>Projected audience</span><b>Ready to activate</b></div>
+          <div class="reach-metric"><strong>428K</strong><span>people after household expansion</span></div>
+          <div class="reach-bars" aria-hidden="true"><i></i><i></i></div>
+          <div class="reach-legend"><span><i></i>Original audience · 178K</span><span><i></i>Household reach · +250K</span></div>
+        </div>
+      </section>
+
+      <section>
+        <p class="chapter">06 / What shipped</p>
+        <h2>A native household system from modeling through measurement.</h2>
+        <ul class="shipped-list">
+          <li>
+            <svg class="shipped-icon" viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="28" r="10"/><circle cx="27" cy="66" r="10"/><circle cx="69" cy="66" r="10"/><path d="M43 37 32 56M53 37l11 19M38 66h20"/></svg>
+            <strong>Automated Household</strong><span>A first-class entity within mParticle’s identity system.</span>
+          </li>
+          <li>
+            <svg class="shipped-icon" viewBox="0 0 96 96" aria-hidden="true"><circle cx="25" cy="48" r="9"/><circle cx="71" cy="25" r="9"/><circle cx="71" cy="71" r="9"/><path d="M34 45c15-1 18-16 28-18M34 51c15 1 18 16 28 18"/><path d="m66 25 3 3 6-7"/></svg>
+            <strong>Per-connection activation</strong><span>Control over which destinations receive expanded audiences.</span>
+          </li>
+          <li>
+            <svg class="shipped-icon" viewBox="0 0 96 96" aria-hidden="true"><path d="m48 20 30 15-30 15-30-15 30-15Z"/><path d="m22 48 26 13 26-13M22 61l26 13 26-13"/></svg>
+            <strong>Unified performance</strong><span>Enrichment and expansion capabilities brought under one model.</span>
+          </li>
+          <li>
+            <svg class="shipped-icon" viewBox="0 0 96 96" aria-hidden="true"><path d="M21 72V53M38 72V39M55 72V48M72 72V25"/><path d="M17 76h62"/><path d="m22 40 16-12 17 7 18-16"/></svg>
+            <strong>Coverage and performance views</strong><span>Visibility into how household expansion was working.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="chapter">07 / Key takeaways</p>
+        <h2>I would frame the system earlier.</h2>
+        <p>We initially approached Household Reach as its own feature. Only later did it become clear that Household Reach, Match Boost, and AI-driven expansion were different versions of the same user job.</p>
+        <p>If I were starting again, I would map those adjacent capabilities earlier and establish the shared expansion model before exploring individual feature flows.</p>
+        <p><strong>That likely would have reduced duplicate exploration and made cross-team alignment easier sooner.</strong></p>
+      </section>
+    </article>
+
+    <nav class="case-next" aria-label="Case study navigation">
+      <span>Continue exploring</span>
+      <a href="../index.html#work">Back to selected work <b>↗</b></a>
+    </nav>
+  </main>
+  <footer>
+    <a class="brand" href="../index.html"><span>✦</span> SANKALP JOSHI</a>
+    <nav class="footer-links"><a href="https://www.linkedin.com/in/sankalpjoshi/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5H3.2V21h3.3V8.5ZM4.85 3A2 2 0 1 0 4.8 7a2 2 0 0 0 .05-4ZM21 13.8c0-3.75-2-5.5-4.65-5.5a4 4 0 0 0-3.6 1.98V8.5H9.45V21h3.3v-6.2c0-1.64.3-3.23 2.34-3.23 2 0 2.03 1.88 2.03 3.34V21H21v-7.2Z" fill="currentColor"/></svg></a><a href="https://github.com/sankalpjoshiux" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.2a6.8 6.8 0 0 0-2.15 13.25c.34.06.46-.14.46-.32v-1.2c-1.88.4-2.28-.8-2.28-.8-.3-.8-.75-1-.75-1-.62-.42.05-.42.05-.42.68.05 1.04.7 1.04.7.6 1.04 1.58.74 1.97.57.06-.44.24-.74.43-.91-1.5-.17-3.08-.75-3.08-3.35 0-.74.26-1.34.7-1.82-.08-.17-.3-.86.06-1.8 0 0 .57-.18 1.87.7A6.48 6.48 0 0 1 8 6.1c.58 0 1.15.08 1.69.23 1.3-.88 1.87-.7 1.87-.7.36.94.14 1.63.07 1.8.43.48.69 1.08.69 1.82 0 2.61-1.58 3.18-3.09 3.35.25.2.46.57.46 1.15v1.7c0 .18.12.39.46.32A6.8 6.8 0 0 0 8 1.2Z" fill="currentColor"/></svg></a></nav>
+    <span>© 2026 · Made with care.</span><button id="theme-toggle" aria-label="Toggle theme">◐</button>
+  </footer>
+  <script src="../script.js?v=20260929"></script>
+  <script src="scroll-top.js?v=20260929"></script>
+</body>
+</html>
