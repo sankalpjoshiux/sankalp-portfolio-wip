@@ -27,14 +27,9 @@
       <p class="case-label">Case study / Household Reach</p>
       <h1>Expanding audience reach <em>beyond the individual</em></h1>
       <p class="case-lede">Designed the end-to-end product model for household-level targeting, giving teams more reach while keeping control over where and how audiences expand.</p>
-      <div class="case-visual household-visual" aria-label="Diagram showing one audience member expanding to a connected household">
-        <div class="household-visual-top"><span>HOUSEHOLD EXPANSION</span><b>2.4× reach</b></div>
-        <div class="identity-map" aria-hidden="true">
-          <i class="identity source"></i><i class="identity member member-one"></i><i class="identity member member-two"></i><i class="identity member member-three"></i>
-          <span class="connection connection-one"></span><span class="connection connection-two"></span><span class="connection connection-three"></span>
-        </div>
-        <p>1 matched profile <span>→</span> 1 connected household</p>
-      </div>
+      <figure class="case-visual household-visual household-hero-video">
+        <video src="../assets/household/household-reach-video.mp4" autoplay muted loop playsinline preload="auto" aria-label="Household Reach product preview"></video>
+      </figure>
     </section>
 
     <aside class="case-facts" aria-label="Project overview">
@@ -55,6 +50,10 @@
           <div><span>What shipped</span><p>Household modeling, audience expansion, per-destination activation, and a shared expansion framework.</p></div>
         </div>
       </section>
+
+      <figure class="case-video">
+        <video src="../assets/household/household-reach-walkthrough-2400x1800.mp4" autoplay muted loop playsinline preload="auto" aria-label="Household Reach product walkthrough"></video>
+      </figure>
 
       <section>
         <p class="chapter">01 / The problem</p>
@@ -133,7 +132,39 @@
       </section>
 
       <section>
-        <p class="chapter">06 / What shipped</p>
+        <p class="chapter">06 / The product</p>
+        <h2>Household Reach, from setup to measurement.</h2>
+        <div class="case-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Household Reach product walkthrough">
+          <div class="carousel-head">
+            <div class="carousel-controls">
+              <span class="carousel-count" data-count aria-live="polite">1 / 4</span>
+              <button type="button" data-prev aria-label="Previous slide">←</button>
+              <button type="button" data-next aria-label="Next slide">→</button>
+            </div>
+          </div>
+          <div class="carousel-track" tabindex="0" aria-label="Slides">
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/household/01-create-household.png" width="1600" height="1200" alt="Create Household dialog offering Automatic and Manual household types">
+              <figcaption><span>01 · The product</span><h3>Make household creation fit different data models</h3><p>Teams can create an automatic household from known relationships or define their own household rules when their business requires a custom model.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/household/02-activation-toggles.png" width="1600" height="1200" loading="lazy" alt="Match Boost enabled and Household Reach disabled toggles with descriptions">
+              <figcaption><span>02 · The product</span><h3>Expand audiences without changing the audience</h3><p>Household Reach and Match Boost live at the point of activation, letting marketers choose how each audience expands without changing its original definition.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/household/03-connection-settings.png" width="1600" height="1200" loading="lazy" alt="Audience Boost settings on a connection with Household Reach turned on and households listed">
+              <figcaption><span>03 · The product</span><h3>Choose expansion for each destination</h3><p>Household Reach is enabled on individual audience connections, so marketers can expand reach for channels where households matter while leaving other destinations unchanged.</p></figcaption>
+            </figure>
+            <figure class="carousel-slide" data-chapter="1">
+              <img src="../assets/household/04-enrichment-breakdown.png" width="1600" height="1200" loading="lazy" alt="Stacked bar chart of reach by identifier split into first-party, Household Reach and Match Boost">
+              <figcaption><span>04 · The product</span><h3>Show where the extra reach comes from</h3><p>The enrichment breakdown separates first-party profiles from people added through Household Reach and Match Boost, giving teams visibility into how each capability increases reach.</p></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p class="chapter">07 / What shipped</p>
         <h2>A native household system from modeling through measurement.</h2>
         <ul class="shipped-list">
           <li>
@@ -156,7 +187,7 @@
       </section>
 
       <section>
-        <p class="chapter">07 / Key takeaways</p>
+        <p class="chapter">08 / Key takeaways</p>
         <h2>I would frame the system earlier.</h2>
         <p>We initially approached Household Reach as its own feature. Only later did it become clear that Household Reach, Match Boost, and AI-driven expansion were different versions of the same user job.</p>
         <p>If I were starting again, I would map those adjacent capabilities earlier and establish the shared expansion model before exploring individual feature flows.</p>
@@ -175,6 +206,7 @@
     <span>© 2026 · Made with care.</span><button id="theme-toggle" aria-label="Toggle theme">◐</button>
   </footer>
   <script src="../script.js?v=20260929"></script>
+  <script src="case-carousel.js?v=20260929"></script>
   <script src="scroll-top.js?v=20260929"></script>
 </body>
 </html>
