@@ -975,3 +975,7 @@ body.dark .independent-section .independent-info .project-cta { color: #fff; }
 .project-lume .project-art > img { position: absolute; display: block; }
 .project-lume .project-art > .art-bg { inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .project-lume .project-art > .art-fg { top: 50%; left: 0; width: 100%; height: auto; transform: translateY(-50%); }
+
+/* Project tile with a looping video instead of a still. */
+.project-arc .project-art { background: #dce8df; }
+.project-arc .project-art > .art-video { display: block; width: 100%; height: 100%; object-fit: cover; }
