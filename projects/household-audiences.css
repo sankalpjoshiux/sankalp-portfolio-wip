@@ -305,3 +305,6 @@
 @media (max-width: 900px) {
   .household-study .case-visual.household-hero-video { position: relative; top: auto; right: auto; width: 100%; margin-top: 36px; }
 }
+
+.household-study .case-content > section:has(+ .case-video),
+.household-study .case-content > section.no-divider { border-bottom: 0; }

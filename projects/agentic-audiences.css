@@ -82,3 +82,6 @@
 }
 
 .agentic-study.dark .agentic-case { background: var(--ember-paper); }
+
+.agentic-study .case-content > section:has(+ .case-video),
+.agentic-study .case-content > section:has(+ .case-figure) { border-bottom: 0; }
